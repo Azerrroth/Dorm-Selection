@@ -39,6 +39,9 @@ services:
     
   register:
     image: hw5-register
+    build:
+      context: ./register
+      dockerfile: Dockerfile
     # ports:
     #   - 8088:80
     networks:
@@ -53,6 +56,9 @@ services:
       
   login:
     image: hw5-login
+    build:
+      context: ./login
+      dockerfile: Dockerfile
     # ports:
     #   - 8089:80
     networks:
@@ -68,6 +74,9 @@ services:
 
   dorm:
     image: hw5-dorm
+    build:
+      context: ./dorm
+      dockerfile: Dockerfile
     # ports:
     #   - 8089:80
     networks:
