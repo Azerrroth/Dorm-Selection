@@ -1,0 +1,105 @@
+version: '2.1'
+services:
+  user-db:
+    image: mariadb:latest
+    # ports:
+    #   - 3306
+    restart: always
+    networks:
+      - back-tier
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    healthcheck:
+      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
+
+  dorm-db:
+    image: mariadb:latest
+    # ports:
+    #   - 3306
+    restart: always
+    networks:
+      - back-tier
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    healthcheck:
+      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
+
+    
+  register:
+    image: hw5-register
+    # ports:
+    #   - 8088:80
+    networks:
+      # - front-tier
+      - back-tier
+    links:
+      - user-db
+    volumes:
+      - "./config:/config"
+    depends_on:
+      - user-db
+      
+  login:
+    image: hw5-login
+    # ports:
+    #   - 8089:80
+    networks:
+      - back-tier
+    volumes:
+      - "./config:/config"
+    links:
+      - user-db
+      - dorm-db
+    depends_on:
+      - user-db
+      - dorm-db
+
+  dorm:
+    image: hw5-dorm
+    # ports:
+    #   - 8089:80
+    networks:
+      - back-tier
+    volumes:
+      - "./config:/config"
+    links:
+      - user-db
+      - dorm-db
+    depends_on:
+      - user-db
+      - dorm-db
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    links:
+      - register
+      - login
+      - dorm
+    networks:
+      - back-tier
+    volumes:
+      - "./nginx/logs:/var/log/nginx"
+      - "./nginx/ssl:/etc/nginx/ssl"
+      - "./nginx/conf.d:/etc/nginx/conf.d"
+    depends_on:
+      - register
+      - login
+      - dorm
+    
+networks:
+  back-tier:
+    driver: bridge
