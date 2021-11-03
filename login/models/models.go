@@ -50,7 +50,6 @@ func init() {
 	rand.Seed(time.Now().Unix())
 	// db, err = ConnectDB(user, password, host, dbName, tablePrefix)
 	userDB, err = ConnectDB(user, password, userHost, dbName, tablePrefix)
-
 	dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
 
 	if err != nil {

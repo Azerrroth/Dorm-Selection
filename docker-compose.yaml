@@ -38,7 +38,7 @@ services:
 
     
   register:
-    image: hw5-register
+    image: hw6-register
     build:
       context: ./register
       dockerfile: Dockerfile
@@ -55,7 +55,7 @@ services:
       - user-db
       
   login:
-    image: hw5-login
+    image: hw6-login
     build:
       context: ./login
       dockerfile: Dockerfile
@@ -73,7 +73,7 @@ services:
       - dorm-db
 
   dorm:
-    image: hw5-dorm
+    image: hw6-dorm
     build:
       context: ./dorm
       dockerfile: Dockerfile
@@ -104,6 +104,7 @@ services:
       - "./nginx/logs:/var/log/nginx"
       - "./nginx/ssl:/etc/nginx/ssl"
       - "./nginx/conf.d:/etc/nginx/conf.d"
+      - "./static:/static"
     depends_on:
       - register
       - login

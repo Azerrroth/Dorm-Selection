@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/astaxie/beego/validation"
-	"github.com/gin-contrib/sessions"
+	// "github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 
 	"login/models"
@@ -65,14 +65,20 @@ func Register(c *gin.Context) {
 
 func Login(c *gin.Context) {
 	name := c.Query("name")
+	if name == "" {
+		name = c.PostForm("name")
+	}
 	password := c.Query("password")
+	if password == "" {
+		password = c.PostForm("password")
+	}
 	valid := validation.Validation{}
 	valid.Required(name, "name").Message("用户名不能为空")
 	valid.Required(password, "password").Message("密码不能为空")
 
 	code := e.INVALID_PARAMS
 	data := make(map[string]interface{})
-	session := sessions.Default(c)
+	// session := sessions.Default(c)
 	if !valid.HasErrors() {
 		if !models.ExistUserByName(name) {
 			code = e.ERROR_NOT_EXIST_USER
@@ -81,15 +87,15 @@ func Login(c *gin.Context) {
 				// 登录成功
 				code = e.SUCCESS
 				token, err := util.GenerateToken(name, password, jwtValidityPeriod)
-				session.Set("uid", name)
-				session.Set("status", "online")
-				session.Save()
+				// session.Set("uid", name)
+				// session.Set("status", "online")
+				// session.Save()
 				if err != nil {
 					code = e.ERROR_AUTH_TOKEN
 				} else {
 					data["token"] = token
 					data["name"] = name
-					data["uid"] = session.Get("uid")
+					// data["uid"] = session.Get("uid")
 				}
 				// Open session
 			} else {

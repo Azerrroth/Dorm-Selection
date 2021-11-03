@@ -26,10 +26,10 @@ type Model struct {
 
 func init() {
 	var (
-		err                                           error
-		dbName, user, password, userHost, tablePrefix string
-		waitTime, retryTimes                          int
-		fillNums                                      = 100
+		err                                                     error
+		dbName, user, password, userHost, dormHost, tablePrefix string
+		waitTime, retryTimes                                    int
+		fillNums                                                = 100
 	)
 	sec, err := setting.Cfg.GetSection("database")
 	if err != nil {
@@ -42,7 +42,7 @@ func init() {
 	password = sec.Key("PASSWORD").String()
 	// host = sec.Key("HOST").String()
 	userHost = sec.Key("USER_HOST").String()
-	// dormHost = sec.Key("DORM_HOST").String()
+	dormHost = sec.Key("DORM_HOST").String()
 	tablePrefix = sec.Key("TABLE_PREFIX").String()
 	waitTime, _ = sec.Key("WAIT_TIME").Int()
 	retryTimes, _ = sec.Key("RETRY_TIMES").Int()
@@ -50,14 +50,14 @@ func init() {
 	rand.Seed(time.Now().Unix())
 	// db, err = ConnectDB(user, password, host, dbName, tablePrefix)
 	userDB, err = ConnectDB(user, password, userHost, dbName, tablePrefix)
-
-	// dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
+	dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
 
 	if err != nil {
 		fmt.Println(err)
 		for i := 0; i < retryTimes; i = i + 1 {
 			time.Sleep(time.Duration(waitTime) * time.Millisecond)
 			userDB, err = ConnectDB(user, password, userHost, dbName, tablePrefix)
+			dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
 			fmt.Printf("Error: connect error, retry times: %d/%d. \n", i, retryTimes)
 			if err == nil {
 				break
@@ -66,10 +66,9 @@ func init() {
 	}
 
 	userDB.AutoMigrate(&User{})
+	dormDB.AutoMigrate(&Dorm{})
+	FillDormIfEmpty(fillNums)
 	FillUserIfEmpty(fillNums)
-
-	// dormDB.AutoMigrate(&Dorm{})
-	// FillDormIfEmpty(fillNums)
 
 	if err != nil {
 		log.Println(err)

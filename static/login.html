@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+
+<body>
+    <div>
+        请输入用户名：<input type="text" id="username" value="123456" />
+    </div>
+    <div>
+        请输入密码：<input type="text" id="password" type="password" value="200000" />
+    </div>
+    <div>
+        <button id="btn1">登录</button>
+    </div>
+
+    <div>
+        <button id="btn2">验证 token</button>
+    </div>
+
+    <div id="result">
+
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var token;
+        $("#btn1").click(function () {
+            var name = $("#username").val();
+            var pwd = $("#password").val();
+            console.log(name, pwd);
+
+            $.ajax({
+                type: 'post',
+                url: 'http://dorm.sincos.vip/login',
+                contentType: 'application/x-www-form-urlencoded',
+                dataType: 'json',
+                data: {
+                    name: name,
+                    password: pwd
+                },
+                success: function (data) {
+                    console.log(data)
+                    if (data.code == 200) {
+                        alert('登录成功');
+                        $("#result").text("登录成功!");
+                        console.log(data);
+                        token = data.data.token;
+                        localStorage.setItem('token', token)
+                    } else {
+                        alert('登录失败' + data.msg);
+                        $("#result").text("用户名或密码错误!");
+                    }
+                },
+                error: function () {
+                    alert('参数错误！');
+                    $("#result").text("用户名或密码错误!");
+                }
+            });
+
+
+        });
+
+        $("#btn2").click(function () {
+            token = localStorage.getItem("token");
+            console.log(token);
+            if (token == undefined) {
+                alert("Has not been login.")
+            }
+            else {
+                $.ajax({
+                    type: 'get',
+                    url: 'http://dorm.sincos.vip/token',
+                    contentType: 'application/x-www-form-urlencoded',
+                    dataType: 'json',
+                    data: {
+                        token: token
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        $("#result").text("Token 正确!");
+                    },
+                    error: function () {
+                        alert('参数错误！');
+                        $("#result").text("Token 错误!");
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+</html>
