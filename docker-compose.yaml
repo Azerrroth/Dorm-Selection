@@ -38,7 +38,7 @@ services:
 
     
   register:
-    image: hw6-register
+    image: hw7-register
     build:
       context: ./register
       dockerfile: Dockerfile
@@ -55,7 +55,7 @@ services:
       - user-db
       
   login:
-    image: hw6-login
+    image: hw7-login
     build:
       context: ./login
       dockerfile: Dockerfile
@@ -72,8 +72,27 @@ services:
       - user-db
       - dorm-db
 
+  order:
+    image: hw7-order
+    build:
+      context: ./order
+      dockerfile: Dockerfile
+    # ports:
+    #   - 8089:80
+    networks:
+      - back-tier
+    volumes:
+      - "./config:/config"
+    links:
+      - user-db
+      - dorm-db
+    depends_on:
+      - user-db
+      - dorm-db
+
+
   dorm:
-    image: hw6-dorm
+    image: hw7-dorm
     build:
       context: ./dorm
       dockerfile: Dockerfile
