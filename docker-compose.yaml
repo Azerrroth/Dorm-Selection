@@ -104,6 +104,7 @@ services:
       - "./nginx/logs:/var/log/nginx"
       - "./nginx/ssl:/etc/nginx/ssl"
       - "./nginx/conf.d:/etc/nginx/conf.d"
+      - "./nginx/dist:/dist"
       - "./static:/static"
     depends_on:
       - register
