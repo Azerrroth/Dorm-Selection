@@ -10,12 +10,13 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 
-	"dorm/pkg/setting"
+	"go-gin-example/pkg/setting"
 )
 
-var db *gorm.DB
+// var db *gorm.DB
 
-var userDB, dormDB *gorm.DB
+var userDB, dormDB, orderDB *gorm.DB
+var tablePrefix string
 
 type Model struct {
 	// gorm.Model
@@ -26,10 +27,10 @@ type Model struct {
 
 func init() {
 	var (
-		err                                                     error
-		dbName, user, password, userHost, dormHost, tablePrefix string
-		waitTime, retryTimes                                    int
-		fillNums                                                = 100
+		errUser, errDorm                           error
+		dbName, user, password, userHost, dormHost string
+		waitTime, retryTimes                       int
+		fillNums                                   = 100
 	)
 	sec, err := setting.Cfg.GetSection("database")
 	if err != nil {
@@ -49,31 +50,41 @@ func init() {
 
 	rand.Seed(time.Now().Unix())
 	// db, err = ConnectDB(user, password, host, dbName, tablePrefix)
-	userDB, err = ConnectDB(user, password, userHost, dbName, tablePrefix)
+	userDB, errUser = ConnectDB(user, password, userHost, dbName, tablePrefix)
+	dormDB, errDorm = ConnectDB(user, password, dormHost, dbName, tablePrefix)
 
-	dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
-
-	if err != nil {
+	if errUser != nil || errDorm != nil {
 		fmt.Println(err)
 		for i := 0; i < retryTimes; i = i + 1 {
 			time.Sleep(time.Duration(waitTime) * time.Millisecond)
-			userDB, err = ConnectDB(user, password, userHost, dbName, tablePrefix)
-			dormDB, err = ConnectDB(user, password, dormHost, dbName, tablePrefix)
+			userDB, errUser = ConnectDB(user, password, userHost, dbName, tablePrefix)
+			dormDB, errDorm = ConnectDB(user, password, dormHost, dbName, tablePrefix)
 			fmt.Printf("Error: connect error, retry times: %d/%d. \n", i, retryTimes)
-			if err == nil {
+			if errUser == nil && errDorm == nil {
 				break
 			}
 		}
 	}
+	orderDB = userDB
 
 	userDB.AutoMigrate(&User{})
-	dormDB.AutoMigrate(&Dorm{})
-	FillDormIfEmpty(fillNums)
+	userDB.AutoMigrate(&UserCertify{})
+	userDB.AutoMigrate(&User2Room{})
+
+	dormDB.AutoMigrate(&Building{})
+	dormDB.AutoMigrate(&Room{})
+
+	orderDB.AutoMigrate(&Order{})
+	orderDB.AutoMigrate(&OrderDetail{})
+
+	// FillDormIfEmpty(fillNums)
 	FillUserIfEmpty(fillNums)
 
+	Test()
 	if err != nil {
 		log.Println(err)
 	}
+
 }
 
 func ConnectDB(user string, password string, host string, dbName string, tablePrefix string) (db *gorm.DB, err error) {
@@ -91,3 +102,30 @@ func ConnectDB(user string, password string, host string, dbName string, tablePr
 // func CloseDB() {
 // 	defer db.Close()
 // }
+
+func Test() {
+	// AddOrderDetail(&OrderDetail{ResidentId: 1, OrderId: 1})
+	// AddOrderDetail(&OrderDetail{ResidentId: 2, OrderId: 1})
+	// AddOrderDetail(&OrderDetail{ResidentId: 3, OrderId: 1})
+
+	// result, _ := GetBuildings()
+
+	// for _, userInfo := range result {
+	// 	fmt.Println(userInfo.ID)
+	// 	fmt.Println(userInfo.Name)
+	// }
+
+	// for i := 1; i <= 60; i++ {
+	// 	var numstr string
+	// 	if i < 10 {
+	// 		numstr = fmt.Sprintf("0%d", i)
+	// 	} else {
+	// 		numstr = fmt.Sprintf("%d", i)
+	// 	}
+	// 	AddRoom(&Room{BuildingId: 1, Name: fmt.Sprintf("1%s", numstr), Gender: gender.MALE, TotalBeds: 4, AvailableBeds: uint(rand.Intn(5))})
+	// 	AddRoom(&Room{BuildingId: 1, Name: fmt.Sprintf("2%s", numstr), Gender: gender.MALE, TotalBeds: 4, AvailableBeds: uint(rand.Intn(5))})
+	// 	AddRoom(&Room{BuildingId: 1, Name: fmt.Sprintf("3%s", numstr), Gender: gender.FEMALE, TotalBeds: 4, AvailableBeds: uint(rand.Intn(5))})
+	// 	AddRoom(&Room{BuildingId: 1, Name: fmt.Sprintf("4%s", numstr), Gender: gender.FEMALE, TotalBeds: 4, AvailableBeds: uint(rand.Intn(5))})
+	// }
+
+}

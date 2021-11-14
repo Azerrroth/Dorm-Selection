@@ -29,9 +29,5 @@ func GetDormPage(skip int, nums int) (dorms []Dorm) {
 
 func AddDormItem(dorm *Dorm) bool {
 	result := dormDB.Create(&dorm)
-
-	if result.RowsAffected == 0 {
-		return false
-	}
-	return true
+	return result.RowsAffected != 0
 }

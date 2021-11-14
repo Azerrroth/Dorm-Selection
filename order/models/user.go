@@ -115,7 +115,7 @@ func ExistUserByUsernameAndPassword(username string, password string) (User, boo
 		return User{}, false
 	}
 	var user User
-	userDB.Select("id", "password", "salt").Where("username = ?", username).First(&user)
+	userDB.Model(&User{}).Where("username = ?", username).First(&user)
 	// encrypted, _ := util.EncryptWithSalt(password, []byte(user.Salt))
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password+user.Salt))
 	if err != nil {

@@ -2,8 +2,8 @@ package util
 
 import (
 	"errors"
+	"go-gin-example/pkg/setting"
 	"log"
-	"login/pkg/setting"
 	"math/rand"
 	"time"
 

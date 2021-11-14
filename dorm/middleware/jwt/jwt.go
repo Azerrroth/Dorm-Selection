@@ -6,8 +6,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"dorm/pkg/e"
-	"dorm/pkg/util"
+	"go-gin-example/pkg/e"
+	"go-gin-example/pkg/util"
 )
 
 func JWT() gin.HandlerFunc {
@@ -18,7 +18,10 @@ func JWT() gin.HandlerFunc {
 		code = e.SUCCESS
 		token := c.Query("token")
 		if token == "" {
-			code = e.INVALID_PARAMS
+			token = c.GetHeader("x-token")
+		}
+		if token == "" {
+			code = e.ERROR_AUTH
 		} else {
 			claims, err := util.ParseToken(token)
 			if err != nil {

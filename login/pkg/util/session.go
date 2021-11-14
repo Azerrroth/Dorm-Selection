@@ -3,7 +3,7 @@ package util
 import (
 	"github.com/gin-gonic/gin"
 
-	"login/pkg/setting"
+	"go-gin-example/pkg/setting"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"

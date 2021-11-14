@@ -1,13 +1,15 @@
 package routers
 
 import (
-	"register/pkg/setting"
-	v1 "register/routers/api/v1"
+	"go-gin-example/pkg/setting"
+	v1 "go-gin-example/routers/api/v1"
 
-	"register/middleware/cors"
-	"register/middleware/jwt"
+	"go-gin-example/middleware/cors"
+	"go-gin-example/middleware/jwt"
 
-	// "register/pkg/util"
+	// "github.com/gin-contrib/cors"
+
+	// "go-gin-example/pkg/util"
 
 	// "github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -33,11 +35,19 @@ func InitRouter() *gin.Engine {
 	apiv1.Use(jwt.JWT())
 	{
 		apiv1.POST("/dorm", v1.GetDormList)
+		apiv1.GET("/buildings", v1.GetBuildingList)
+		apiv1.GET("/buildingStatus", v1.GetBuildingStatus)
+		apiv1.GET("/buildingsStatus", v1.GetBuildingsStatus)
+		apiv1.GET("/user2RoomInfo", v1.GetUser2RoomInfo)
+
 		apiv1.GET("/token", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "token access",
 			})
 		})
+		apiv1.GET("/updateCertifyCode", v1.UpdateCertifyCode)
+
+		apiv1.POST("/bookOrder", v1.BookOrder)
 	}
 
 	r.GET("/test", func(c *gin.Context) {

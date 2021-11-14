@@ -7,7 +7,7 @@ import (
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 
-	"register/pkg/e"
+	"go-gin-example/pkg/e"
 )
 
 func Session() gin.HandlerFunc {

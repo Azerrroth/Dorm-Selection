@@ -2,9 +2,9 @@ package util
 
 import (
 	"errors"
+	"go-gin-example/pkg/setting"
 	"log"
 	"math/rand"
-	"register/pkg/setting"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"

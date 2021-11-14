@@ -23,3 +23,13 @@ func RandomString(n int, allowedChars ...[]rune) string {
 
 	return string(b)
 }
+
+func RandomNumber(n int) string {
+	letters := []rune("0123456789")
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = letters[rand.Intn(len(letters))]
+	}
+
+	return string(b)
+}

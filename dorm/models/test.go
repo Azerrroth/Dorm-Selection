@@ -1,14 +1,13 @@
 package models
 
 import (
-	"dorm/pkg/util"
 	"fmt"
+	"go-gin-example/pkg/util"
 	"math/rand"
 )
 
 func FillDormIfEmpty(nums int) {
-	var count int
-	count = int(GetDormCount(""))
+	count := int(GetDormCount(""))
 	if count == 0 {
 		fmt.Printf("No data in dorm list, random add %v \n", nums)
 		for i := 0; i < nums; i++ {
@@ -22,7 +21,7 @@ func FillUserIfEmpty(nums int) {
 	if int(GetUserCount("")) == 0 {
 		fmt.Printf("No data in user list, random add %v \n", nums)
 		for i := 0; i < nums; i++ {
-			tempUser := User{Name: util.RandomString(rand.Int()%16 + 4), Password: util.RandomString(64), Salt: util.RandomString(8)}
+			tempUser := User{Username: util.RandomString(rand.Int()%16 + 4), Password: util.RandomString(64), Salt: util.RandomString(8)}
 			AddUserItem(&tempUser)
 		}
 	}

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"register/pkg/setting"
-	"register/routers"
+	"go-gin-example/pkg/setting"
+	"go-gin-example/routers"
 )
 
 func main() {

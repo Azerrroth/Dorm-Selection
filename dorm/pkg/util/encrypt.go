@@ -1,8 +1,8 @@
 package util
 
 import (
-	"dorm/pkg/setting"
 	"errors"
+	"go-gin-example/pkg/setting"
 	"log"
 	"math/rand"
 	"time"
