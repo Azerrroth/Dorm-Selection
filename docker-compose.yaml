@@ -7,11 +7,14 @@ services:
     restart: always
     networks:
       - back-tier
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    #   MYSQL_DATABASE: ${MYSQL_DATABASE}
+    #   MYSQL_USER: ${MYSQL_USER}
+    #   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    #   MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    env_file:
+      - ".env"
     healthcheck:
       test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD}
         --execute \"SHOW DATABASES;\""
@@ -24,11 +27,14 @@ services:
     restart: always
     networks:
       - back-tier
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    #   MYSQL_DATABASE: ${MYSQL_DATABASE}
+    #   MYSQL_USER: ${MYSQL_USER}
+    #   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    #   MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+    env_file:
+      - ".env"
     healthcheck:
       test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD}
         --execute \"SHOW DATABASES;\""
@@ -50,6 +56,7 @@ services:
       - "./config:/config"
     depends_on:
       - user-db
+      - user
 
   login:
     image: login
@@ -69,6 +76,7 @@ services:
     depends_on:
       - user-db
       - dorm-db
+      - user
 
   order:
     image: order
@@ -88,6 +96,7 @@ services:
     depends_on:
       - user-db
       - dorm-db
+      - user
 
   user:
     image: user
@@ -124,6 +133,7 @@ services:
     depends_on:
       - user-db
       - dorm-db
+      - user
 
   # nginx:
   #   image: nginx

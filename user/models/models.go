@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
+	"os"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -32,7 +33,6 @@ func init() {
 		errUser, errDorm                           error
 		dbName, user, password, userHost, dormHost string
 		waitTime, retryTimes                       int
-		fillNums                                   = 100
 	)
 	sec, err := setting.Cfg.GetSection("database")
 	if err != nil {
@@ -59,8 +59,12 @@ func init() {
 		fmt.Println(err)
 		for i := 0; i < retryTimes; i = i + 1 {
 			time.Sleep(time.Duration(waitTime) * time.Millisecond)
-			userDB, errUser = ConnectDB(user, password, userHost, dbName, tablePrefix)
-			dormDB, errDorm = ConnectDB(user, password, dormHost, dbName, tablePrefix)
+			if errUser != nil {
+				userDB, errUser = ConnectDB(user, password, userHost, dbName, tablePrefix)
+			}
+			if errDorm != nil {
+				dormDB, errDorm = ConnectDB(user, password, dormHost, dbName, tablePrefix)
+			}
 			fmt.Printf("Error: connect error, retry times: %d/%d. \n", i, retryTimes)
 			if errUser == nil && errDorm == nil {
 				break
@@ -71,8 +75,8 @@ func init() {
 
 	userDB.AutoMigrate(&User{})
 	userDB.AutoMigrate(&UserCertify{})
-	userDB.AutoMigrate(&User2Room{})
 
+	dormDB.AutoMigrate(&User2Room{})
 	dormDB.AutoMigrate(&Building{})
 	dormDB.AutoMigrate(&Room{})
 
@@ -81,7 +85,7 @@ func init() {
 
 	// FillDormIfEmpty(fillNums)
 	// FillUserIfEmpty(fillNums)
-	
+
 	if initDatabase := os.Getenv("INIT_DB_IF_EMPTY"); initDatabase != "" {
 		if int(GetUserCount("")) == 0 {
 			Init()
@@ -139,8 +143,14 @@ func Test() {
 func Init() {
 	buildings := 10
 	rooms := 50
-	InitUsers(1000)
+	users := 10
+	fmt.Printf("Init user: %v \n", users)
+	InitUsers(users)
+
+	fmt.Printf("Init buildings: %v \n", buildings)
 	InitBuildings(buildings)
+
+	fmt.Printf("Init rooms for every buildings, rooms num per floor: %v \n", rooms)
 	InitRooms(buildings, rooms)
 }
 
