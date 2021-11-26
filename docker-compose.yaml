@@ -43,7 +43,7 @@ services:
       retries: 10
 
   register:
-    image: register
+    image: ms-register
     build:
       context: ./register
       dockerfile: Dockerfile
@@ -59,7 +59,7 @@ services:
       - user
 
   login:
-    image: login
+    image: ms-login
     build:
       context: ./login
       dockerfile: Dockerfile
@@ -79,7 +79,7 @@ services:
       - user
 
   order:
-    image: order
+    image: ms-order
     build:
       context: ./order
       dockerfile: Dockerfile
@@ -99,7 +99,7 @@ services:
       - user
 
   user:
-    image: user
+    image: ms-user
     build:
       context: ./user
       dockerfile: Dockerfile
@@ -116,7 +116,7 @@ services:
       - user-db
 
   dorm:
-    image: dorm
+    image: ms-dorm
     build:
       context: ./dorm
       dockerfile: Dockerfile
@@ -157,7 +157,7 @@ services:
   #     - dorm
 
   node-server:
-    image: node-server
+    image: ms-node-server
     build:
       context: ./node-server
       dockerfile: Dockerfile
