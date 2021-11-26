@@ -80,9 +80,12 @@ func init() {
 	orderDB.AutoMigrate(&OrderDetail{})
 
 	// FillDormIfEmpty(fillNums)
-	FillUserIfEmpty(fillNums)
-	if int(GetUserCount("")) == 0 {
-		Init()
+	// FillUserIfEmpty(fillNums)
+	
+	if initDatabase := os.Getenv("INIT_DB_IF_EMPTY"); initDatabase != "" {
+		if int(GetUserCount("")) == 0 {
+			Init()
+		}
 	}
 	if err != nil {
 		log.Println(err)

@@ -94,6 +94,8 @@ services:
     build:
       context: ./user
       dockerfile: Dockerfile
+    environment:
+      INIT_DB_IF_EMPTY: "true"
     networks:
       - front-tier
       - back-tier
@@ -152,13 +154,13 @@ services:
     ports:
       - 80:80
     environment:
-      USER_SERVICE_URL: "user:8080"
-      DORM_SERVICE_URL: "dorm:8080"
-      ORDER_SERVICE_URL: "order:8080"
-      LOGIN_SERVICE_URL: "login:8080"
-      REGISTER_SERVICE_URL: "register:8080"
-      TOKEN_SERVICE_URL: "user:8080"
-      TEST_SERVICE_URL: "user:8080"
+      USER_SERVICE_URL: "user:80"
+      DORM_SERVICE_URL: "dorm:80"
+      ORDER_SERVICE_URL: "order:80"
+      LOGIN_SERVICE_URL: "login:80"
+      REGISTER_SERVICE_URL: "register:80"
+      TOKEN_SERVICE_URL: "user:80"
+      TEST_SERVICE_URL: "user:80"
     networks:
       - front-tier
       - back-tier

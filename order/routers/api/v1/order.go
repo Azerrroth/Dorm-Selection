@@ -57,7 +57,7 @@ func BookOrder(c *gin.Context) {
 	// 2. Check users is not in the building
 	for _, userInfo := range userInfoList {
 		u2rs, _ := models.GetValidUser2RoomByUserId(userInfo.ID)
-		fmt.Println(len(u2rs))
+		// fmt.Println(len(u2rs))
 		if len(u2rs) != 0 {
 			code = e.ERROR_USER_IN_BUILDING
 			errorResponse(c, code)
@@ -94,7 +94,7 @@ func BookOrder(c *gin.Context) {
 	// 5. Check available room for them
 	//    If exists, response. Else response error
 
-	rooms, _ := models.GetRoomWithAvailableBedsByBuildingId(buildingId, usersNum)
+	rooms, _ := models.GetRoomWithAvailableBedsByBuildingIdAndGender(buildingId, usersNum, gender)
 	if len(rooms) == 0 {
 		order.IsSuccess = false
 		models.UpdateOrder(&order)

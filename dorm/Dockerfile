@@ -25,6 +25,7 @@ FROM scratch
 
 # 从builder镜像中把/dist/app 拷贝到当前目录
 COPY --from=builder /build/app /
+# COPY ./config ./config
 
 EXPOSE 80
 

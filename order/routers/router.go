@@ -34,20 +34,43 @@ func InitRouter() *gin.Engine {
 	// apiv1.Use(session.Session())
 	apiv1.Use(jwt.JWT())
 	{
-		apiv1.POST("/dorm", v1.GetDormList)
-		apiv1.GET("/buildings", v1.GetBuildingList)
-		apiv1.GET("/buildingStatus", v1.GetBuildingStatus)
-		apiv1.GET("/buildingsStatus", v1.GetBuildingsStatus)
-		apiv1.GET("/user2RoomInfo", v1.GetUser2RoomInfo)
-
 		apiv1.GET("/token", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "token access",
 			})
 		})
-		apiv1.GET("/updateCertifyCode", v1.UpdateCertifyCode)
 
-		apiv1.POST("/bookOrder", v1.BookOrder)
+		dorm := apiv1.Group("/dorm")
+
+		// Dorm route function
+		dorm.GET("/user2RoomInfo", v1.GetUser2RoomInfo)
+		dorm.GET("/buildings", v1.GetBuildingList)
+		dorm.GET("/buildingStatus", v1.GetBuildingStatus)
+		dorm.GET("/buildingsStatus", v1.GetBuildingsStatus)
+		dorm.POST("/checkOutRoom", v1.CheckOutRoom)
+
+		// apiv1.POST("/dorm", v1.GetDormList)
+		// apiv1.GET("/buildings", v1.GetBuildingList)
+		// apiv1.GET("/buildingStatus", v1.GetBuildingStatus)
+		// apiv1.GET("/buildingsStatus", v1.GetBuildingsStatus)
+		// apiv1.GET("/user2RoomInfo", v1.GetUser2RoomInfo)
+		// apiv1.POST("/checkOutRoom", v1.CheckOutRoom)
+
+		user := apiv1.Group("/user")
+
+		// user route function
+		user.POST("/updateUserProfile", v1.UpdateUserProfile)
+		user.GET("/updateCertifyCode", v1.UpdateCertifyCode)
+
+		// apiv1.POST("/updateUserProfile", v1.UpdateUserProfile)
+		// apiv1.GET("/updateCertifyCode", v1.UpdateCertifyCode)
+
+		order := apiv1.Group("/order")
+
+		// order route function
+		order.POST("/bookOrder", v1.BookOrder)
+
+		// apiv1.POST("/bookOrder", v1.BookOrder)
 	}
 
 	r.GET("/test", func(c *gin.Context) {
