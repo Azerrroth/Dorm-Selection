@@ -3,7 +3,7 @@ VUE_APP_BASE_URL = http://127.0.0.1
 
 build:
 	echo "Start building frontent pages"
-	# git clone https://gitee.com/Azerrroth/frontend-for-dorm-selection
+	git clone https://gitee.com/Azerrroth/frontend-for-dorm-selection
 	export VUE_APP_BASE_URL=$(VUE_APP_BASE_URL) && cd frontend-for-dorm-selection && npm --registry https://registry.npm.taobao.org install && npm run build
 	cp -r frontend-for-dorm-selection/dist .
 
