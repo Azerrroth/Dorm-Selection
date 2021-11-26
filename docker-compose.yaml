@@ -13,15 +13,14 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     healthcheck:
-      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} --execute \"SHOW DATABASES;\""
+      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD}
+        --execute \"SHOW DATABASES;\""
       interval: 2s
       timeout: 20s
       retries: 10
 
   dorm-db:
     image: mariadb:latest
-    # ports:
-    #   - 3306
     restart: always
     networks:
       - back-tier
@@ -31,21 +30,19 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     healthcheck:
-      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} --execute \"SHOW DATABASES;\""
+      test: "/usr/bin/mysql --user=${MYSQL_USER} --password=${MYSQL_PASSWORD}
+        --execute \"SHOW DATABASES;\""
       interval: 2s
       timeout: 20s
       retries: 10
 
-    
   register:
     image: hw7-register
     build:
       context: ./register
       dockerfile: Dockerfile
-    # ports:
-    #   - 8088:80
     networks:
-      # - front-tier
+      - front-tier
       - back-tier
     links:
       - user-db
@@ -53,7 +50,7 @@ services:
       - "./config:/config"
     depends_on:
       - user-db
-      
+
   login:
     image: hw7-login
     build:
@@ -62,6 +59,7 @@ services:
     # ports:
     #   - 8089:80
     networks:
+      - front-tier
       - back-tier
     volumes:
       - "./config:/config"
@@ -80,6 +78,7 @@ services:
     # ports:
     #   - 8089:80
     networks:
+      - front-tier
       - back-tier
     volumes:
       - "./config:/config"
@@ -90,6 +89,20 @@ services:
       - user-db
       - dorm-db
 
+  user:
+    image: hw7-user
+    build:
+      context: ./user
+      dockerfile: Dockerfile
+    networks:
+      - front-tier
+      - back-tier
+    links:
+      - user-db
+    volumes:
+      - "./config:/config"
+    depends_on:
+      - user-db
 
   dorm:
     image: hw7-dorm
@@ -99,6 +112,7 @@ services:
     # ports:
     #   - 8089:80
     networks:
+      - front-tier
       - back-tier
     volumes:
       - "./config:/config"
@@ -109,27 +123,48 @@ services:
       - user-db
       - dorm-db
 
-  nginx:
-    image: nginx
+  # nginx:
+  #   image: nginx
+  #   ports:
+  #     - 80:80
+  #   links:
+  #     - register
+  #     - login
+  #     - dorm
+  #   networks:
+  #     - back-tier
+  #   volumes:
+  #     - "./nginx/logs:/var/log/nginx"
+  #     - "./nginx/ssl:/etc/nginx/ssl"
+  #     - "./nginx/conf.d:/etc/nginx/conf.d"
+  #     - "./nginx/dist:/dist"
+  #     - "./static:/static"
+  #   depends_on:
+  #     - register
+  #     - login
+  #     - dorm
+
+  node-server:
+    image: node-server
+    build:
+      context: ./node-server
+      dockerfile: Dockerfile
     ports:
       - 80:80
-    links:
-      - register
-      - login
-      - dorm
     networks:
+      - front-tier
       - back-tier
     volumes:
-      - "./nginx/logs:/var/log/nginx"
-      - "./nginx/ssl:/etc/nginx/ssl"
-      - "./nginx/conf.d:/etc/nginx/conf.d"
-      - "./nginx/dist:/dist"
-      - "./static:/static"
+      - "./dist:/dist"
     depends_on:
       - register
       - login
       - dorm
-    
+      - order
+      - user
+
 networks:
   back-tier:
+    driver: bridge
+  front-tier:
     driver: bridge
