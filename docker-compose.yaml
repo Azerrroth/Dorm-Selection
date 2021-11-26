@@ -37,22 +37,22 @@ services:
       retries: 10
 
   register:
-    image: hw7-register
+    image: register
     build:
       context: ./register
       dockerfile: Dockerfile
     networks:
       - front-tier
       - back-tier
-    links:
-      - user-db
+    # links:
+    #   - user-db
     volumes:
       - "./config:/config"
     depends_on:
       - user-db
 
   login:
-    image: hw7-login
+    image: login
     build:
       context: ./login
       dockerfile: Dockerfile
@@ -63,15 +63,15 @@ services:
       - back-tier
     volumes:
       - "./config:/config"
-    links:
-      - user-db
-      - dorm-db
+    # links:
+    #   - user-db
+    #   - dorm-db
     depends_on:
       - user-db
       - dorm-db
 
   order:
-    image: hw7-order
+    image: order
     build:
       context: ./order
       dockerfile: Dockerfile
@@ -82,30 +82,30 @@ services:
       - back-tier
     volumes:
       - "./config:/config"
-    links:
-      - user-db
-      - dorm-db
+    # links:
+    #   - user-db
+    #   - dorm-db
     depends_on:
       - user-db
       - dorm-db
 
   user:
-    image: hw7-user
+    image: user
     build:
       context: ./user
       dockerfile: Dockerfile
     networks:
       - front-tier
       - back-tier
-    links:
-      - user-db
+    # links:
+    #   - user-db
     volumes:
       - "./config:/config"
     depends_on:
       - user-db
 
   dorm:
-    image: hw7-dorm
+    image: dorm
     build:
       context: ./dorm
       dockerfile: Dockerfile
@@ -116,9 +116,9 @@ services:
       - back-tier
     volumes:
       - "./config:/config"
-    links:
-      - user-db
-      - dorm-db
+    # links:
+    #   - user-db
+    #   - dorm-db
     depends_on:
       - user-db
       - dorm-db
@@ -151,6 +151,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - 80:80
+    environment:
+      USER_SERVICE_URL: "user:8080"
+      DORM_SERVICE_URL: "dorm:8080"
+      ORDER_SERVICE_URL: "order:8080"
+      LOGIN_SERVICE_URL: "login:8080"
+      REGISTER_SERVICE_URL: "register:8080"
+      TOKEN_SERVICE_URL: "user:8080"
+      TEST_SERVICE_URL: "user:8080"
     networks:
       - front-tier
       - back-tier
