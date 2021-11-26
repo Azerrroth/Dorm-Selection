@@ -28,4 +28,4 @@ clean:
 
 cleanall:
 	docker-compose down
-	docker rmi $(docker images | grep "ms-" | awk '{print $1}')
+	docker rmi $$(docker images | grep "ms-" | awk '{print $1}')
