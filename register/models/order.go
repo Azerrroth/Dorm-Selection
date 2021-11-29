@@ -11,21 +11,21 @@ type Order struct {
 }
 
 func GetOrders(maps interface{}) (orders []Order) {
-	dormDB.Where(maps).Find(&orders)
+	orderDB.Where(maps).Find(&orders)
 	return
 }
 
 func GetOrderCount(maps interface{}) (count int64) {
-	dormDB.Model(&Order{}).Where(maps).Count(&count) // 查询总数
+	orderDB.Model(&Order{}).Where(maps).Count(&count) // 查询总数
 	return
 }
 
 func AddOrder(order *Order) (uint, error) {
-	result := dormDB.Create(order)
+	result := orderDB.Create(order)
 	return order.ID, result.Error
 }
 
 func UpdateOrder(order *Order) error {
-	err := dormDB.Save(order).Error
+	err := orderDB.Save(order).Error
 	return err
 }

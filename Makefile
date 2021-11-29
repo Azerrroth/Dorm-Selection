@@ -18,7 +18,7 @@ copy:
 	cp -r user/* order/
 
 clean:
-	docker-compose down
+	-docker-compose down
 	rm -rf dorm/*
 	rm -rf login/*
 	rm -rf register/*
@@ -27,5 +27,5 @@ clean:
 	rm -rf frontend-for-dorm-selection
 
 cleanall:
-	docker-compose down
-	docker rmi $$(docker images | grep "ms-" | awk '{print $1}')
+	-docker-compose down
+	-docker rmi $$(docker images | grep "ms-" | awk '{print $1}')
