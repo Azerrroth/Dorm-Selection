@@ -11,7 +11,10 @@ serve:
 	-git clone https://gitee.com/Azerrroth/Dorm-selection-mid-layer.git node-server
 	docker-compose up
 
-copy:
+sync:
+	git clone https://gitee.com/Azerrroth/Dorm-selection-backend.git user
+	rm -rf user/config
+	rm -rf user/.git
 	cp -r user/* dorm/
 	cp -r user/* login/
 	cp -r user/* register/
@@ -19,13 +22,14 @@ copy:
 
 clean:
 	-docker-compose down
+	rm -rf user/*
 	rm -rf dorm/*
 	rm -rf login/*
 	rm -rf register/*
 	rm -rf order/*
-	rm -rf node-server
-	rm -rf frontend-for-dorm-selection
+	-rm -rf node-server
+	-rm -rf frontend-for-dorm-selection
 
 cleanall:
-	-docker-compose down
+	make clean
 	-docker rmi $$(docker images | grep "ms-" | awk '{print $1}')
